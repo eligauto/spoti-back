@@ -40,7 +40,7 @@ if (fs.existsSync(basePath)) {
         !fs.existsSync(`${finalPath}.ts`)
       )
         return;
-      const finalFile = require(finalPath);
+      const finalFile = require(finalPath).default;
       if (!Object.keys(finalFile).length) return;
 
       routesDir.use(finalRoute, finalFile);
